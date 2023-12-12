@@ -8,6 +8,6 @@ import org.springframework.context.annotation.*;
 public class CdcConfig {
     private String binlogHost = "localhost";
     private int binlogPort = 3306;
-    private String binlogUsername = "root";
-    private String binlogPassword = "root";
+    private String binlogUsername = System.getenv("BINLOG_USERNAME") != null ? System.getenv("BINLOG_USERNAME") : "root";
+    private String binlogPassword = System.getenv("BINLOG_PASSWORD") != null ? System.getenv("BINLOG_PASSWORD") : "changeme";
 }
